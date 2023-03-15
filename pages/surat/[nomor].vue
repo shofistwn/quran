@@ -1,10 +1,10 @@
 <template>
   <div class="container">
     <div class="row mt-4">
-      <div class="col-12 col-md-6">
+      <div class="col-4 col-md-6">
         <NuxtLink to="/" class="btn btn-primary">Kembali</NuxtLink>
       </div>
-      <div class="col-12 col-md-6 d-flex justify-content-end">
+      <div class="col-8 col-md-6 d-flex justify-content-end">
         <div v-if="suratSebelumnya">
           <NuxtLink
             :to="`/surat/${suratSebelumnya.nomor}`"
@@ -70,6 +70,14 @@
         </div>
       </div>
 
+      <div class="col-12">
+        <div class="card card-margin">
+          <div class="card-body text-center py-2">
+            Klik pada teks arab untuk mendengarkan audio per-ayat.
+          </div>
+        </div>
+      </div>
+
       <div class="col-12" v-for="(ayat, index) in surat.ayat" :key="index">
         <div class="card card-margin">
           <div class="card-body">
@@ -102,7 +110,7 @@
     <div class="row my-4" v-else>
       <div class="col-12">
         <div class="card">
-          <div class="card-body text-center">Loading...</div>
+          <div class="card-body text-center">Memuat...</div>
         </div>
       </div>
     </div>
