@@ -6,6 +6,20 @@
       <NuxtPage />
     </main>
     <Footer />
+
+    <button class="to-top-btn" @click="scrollToTop">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill="#FFF"
+          d="M12.707 7.293l4.5 4.5a1 1 0 0 1-1.414 1.414L13 9.414V19a1 1 0 1 1-2 0V9.414l-2.793 2.793a1 1 0 1 1-1.414-1.414l4.5-4.5a1 1 0 0 1 1.414 0z"
+        />
+      </svg>
+    </button>
   </div>
 </template>
 
@@ -108,4 +122,34 @@ main {
   border: #28a745;
   opacity: 0.8;
 }
+
+.to-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(128, 128, 128, 0.3);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.to-top-btn:hover {
+  opacity: 0.8;
+}
 </style>
+
+<script>
+export default {
+  methods: {
+    scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    },
+  },
+};
+</script>

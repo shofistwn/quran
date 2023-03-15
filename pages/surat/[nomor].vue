@@ -78,6 +78,18 @@
         </div>
       </div>
 
+      <div class="col-12">
+        <div class="card card-margin">
+          <div class="card-body text-center">
+            <div class="list-info w-100 my-2">
+              <h2 class="list-title text-arabic ms-auto">
+                بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="col-12" v-for="(ayat, index) in surat.ayat" :key="index">
         <div class="card card-margin">
           <div class="card-body">
@@ -88,7 +100,7 @@
                 </div>
                 <div class="list-info w-100 my-2">
                   <h2
-                    class="list-title text-arabic fw-bold ms-auto"
+                    class="list-title text-arabic ms-auto"
                     @click="playAudio(ayat.audio['05'])"
                   >
                     {{ ayat.teksArab }}
@@ -138,7 +150,6 @@ export default {
           this.suratSebelumnya = response.data.suratSebelumnya;
         });
     },
-
     playAudio(audioFile) {
       if (audioFile) {
         if (this.currentAudio && this.currentAudio !== audioFile) {
